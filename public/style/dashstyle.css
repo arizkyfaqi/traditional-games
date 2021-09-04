@@ -1,0 +1,27 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+}
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.content {
+  width: 80%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.btn-success {
+  float: left;
+  color: white !important;
+  font-size: 15px !important;
+  margin-bottom: 5px !important;
+}

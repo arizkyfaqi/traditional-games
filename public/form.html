@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"
+  ></script>
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      margin: 0px;
+    }
+    .container {
+      max-width: 1170px;
+      width: 100%;
+      padding: 0 15px;
+      margin: 0 auto;
+    }
+    .content {
+      width: 60%;
+      margin: 30px auto;
+    }
+    form {
+      margin: 10px 10px;
+    }
+  </style>
+  <body>
+    <div class="constainer">
+      <div class="content">
+        <div class="card">
+          <div class="card-body">
+            <h5>Add New User</h5>
+            <h5>Update User</h5>
+            <form>
+              <div class="form-group">
+                <label for="inputName" class="label"> Fullname </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputName"
+                  placeholder="Provide your name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="inputEmail" class="label"> Email address </label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="inputEmail"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="inputPhone" class="label"> Phone </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inputPhone"
+                  placeholder="Enter your phone number"
+                />
+              </div>
+              <a href="#" class="btn btn-success">Add</a>
+              <a href="#" class="btn btn-primary">Save</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

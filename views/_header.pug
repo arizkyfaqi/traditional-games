@@ -1,0 +1,26 @@
+header#main
+  .container
+    span.logo LOGO
+    .header-left
+      a(href='/') HOME
+      a(href='#') WORK
+      a(href='#') CONTACT
+      a(href='#') ABOUT ME
+    .header-right
+      - let role = '';
+      if (user)
+        - role = user.role;
+        if (role === 'user')
+          a.logout-btn LOGOUT
+          a(href='#')= user.fullname.split(' ')[0]
+        else if (role === 'admin')
+          a.logout-btn LOGOUT
+          a(href='#')= user.fullname.split(' ')[0]
+          a.btn-dashboard DASHBOARD
+      else
+        a(href='/singup') SING UP
+        a(href='/login') LOGIN
+
+    // menu icon
+    div
+      //- span.fa.fa-bars

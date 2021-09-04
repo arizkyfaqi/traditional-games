@@ -1,0 +1,52 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/style/rockpaperscr_style.css')
+  title ROCK PAPER SCISSORS
+.main-wrapper
+  .container
+    .main
+      .heading
+        a(href='/') &lt;
+        img(src='./assets/rockpaperscr/logo.png' alt='')
+        h4 ROCK PAPER SCISSORS
+      .contents
+        .content
+          h4 PLAYER 1
+          #bgbatu.content-icon(onclick="changebg('bgbatu')")
+            a#batu(href='#' value='batu')
+              img(src='./assets/rockpaperscr/batu.png' alt='')
+          #bgkertas.content-icon(onclick="changebg('bgkertas')")
+            a#kertas(href='#' value='kertas')
+              img(src='./assets/rockpaperscr/kertas.png ' alt='')
+          #bggunting.content-icon(onclick="changebg('bggunting')")
+            a#gunting(href='#' value='gunting')
+              img(src='./assets/rockpaperscr/gunting.png' alt='')
+        .content-vs
+          .result-wrapper
+            h1#vstxt.vs VS
+            #win.result
+              h3 PLAYER 1
+              h3 WIN!
+            #com-win.result
+              h3 COMPUTER
+              h3 WIN!
+            #draw.result.draw(style='background-color: #035b0c !important')
+              // <h3>It's a</h3>
+              h3 DRAW!
+          a#reset.reset(href='#' onclick='location.reload();')
+            img(src='./assets/rockpaperscr/refresh.png' alt='')
+        .content
+          h4 COMP
+          #bgcom-batu.content-icon
+            a#batu(href='#')
+              img(src='./assets/rockpaperscr/batu.png' alt='')
+          #bgcom-kertas.content-icon
+            a#kertas(href='#')
+              img(src='./assets/rockpaperscr/kertas.png ' alt='')
+          #bgcom-gunting.content-icon
+            a#gunting(href='#')
+              img(src='./assets/rockpaperscr/gunting.png' alt='')
+script(src='./js/rockpaperscr.js')

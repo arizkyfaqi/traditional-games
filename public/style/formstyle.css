@@ -1,0 +1,23 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+}
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.content {
+  width: 60%;
+  margin: 30px auto;
+}
+
+form {
+  margin: 10px 10px;
+}

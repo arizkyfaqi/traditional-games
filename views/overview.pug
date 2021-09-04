@@ -1,0 +1,122 @@
+extends base
+
+block content
+  .top-wrapper
+    .container
+      h1 PLAY TRADITIONAL GAME
+      p Experience new traditional game play
+      button.btn-play#playnow PLAY NOW
+    .sort-down
+      a.btn-story(href='#pagethegames')
+        span The Story
+        br
+        svg.bi.bi-caret-down(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewbox='0 0 16 16')
+          path(d='M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z')
+  #pagethegames.the-game
+    // <div class="container">
+    .description
+      p What&apos;s so special?
+      h1 THE GAMES
+    #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators
+        li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
+        li(data-target='#carouselExampleIndicators' data-slide-to='1')
+        li(data-target='#carouselExampleIndicators' data-slide-to='2')
+      .carousel-inner
+        .carousel-item.active
+          img.d-block.w-100(src='./assets/rockpaperstrategy-1600.jpg' alt='First slide')
+        .carousel-item
+          img.d-block.w-100(src='./assets/features.jpg' alt='Second slide')
+        .carousel-item
+          img.d-block.w-100(src='./assets/rockpaperstrategy-1600.jpg' alt='Third slide')
+      a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+      a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+    // </div>
+  #pagefeatures.features
+    .container
+      .feature
+        p What&apos;s so special?
+        h2 FEATURES
+        ul
+          li
+            h5 TRADITIONAL GAMES
+            p
+              | if you miss your childhood, we provide many traditional games
+              | here
+          li
+            h5 GAMES SUIT
+          li
+            h5 TBD
+  #pagerequirements.system-requirements
+    .container
+      .header
+        h1 SYSTEM
+        h1 REQUIREMENTS
+      .reuirement
+        table
+          tr
+            td
+              h6 OS:
+              span
+                | Windows 7 64-bit only (No OSX support at this time)
+            td
+              h6 PROCESSIR:
+              span
+                | Intel Core 2 Duo @ 2.4 GHZ or AMD Athlon X2 @ 2.8 GHZ
+          tr
+            td
+              h6 MEMORY:
+              span 4 GB RAM
+            td
+              h6 STORAGE:
+              span 8 GB available space
+          tr
+            td(colspan='2')
+              h6 GRAPHICS:
+              span
+                | NVIDIA GeForce GTX 660 2GB or AMD Radeon HD 7850 2GB DirectX11
+                | (Shader Model 5)
+  #topscoores.top-scoores
+    .container
+      .top-scoore
+        h2 TOP SCORES
+        p This top score from various games provided on this platform
+        a.btn-play(href='#') see more
+      .twitter-comment
+        blockquote.twitter-tweet(style='float: left')
+          p(lang='in' dir='ltr')
+            | Traditional Games grafik nya bagus, no pata-pata club. mantap &#x1F44D;
+          |             &mdash; Arfa (@pagiditeras)
+          a(href='https://twitter.com/pagiditeras/status/1409800007432114181?ref_src=twsrc%5Etfw') June 29, 2021
+        script(async='' src='https://platform.twitter.com/widgets.js' charset='utf-8')
+        blockquote.twitter-tweet
+          p(lang='in' dir='ltr') Petualangan yg menantang
+          |             &mdash; Arfa (@pagiditeras)
+          a(href='https://twitter.com/pagiditeras/status/1409803710599819265?ref_src=twsrc%5Etfw') June 29, 2021
+        script(async='' src='https://platform.twitter.com/widgets.js' charset='utf-8')
+        blockquote.twitter-tweet
+          p(lang='tl' dir='ltr') Babak sodor game terfavorite&#x1F601;
+          |             &mdash; Arfa (@pagiditeras)
+          a(href='https://twitter.com/pagiditeras/status/1409804297332613121?ref_src=twsrc%5Etfw') June 29, 2021
+        script(async='' src='https://platform.twitter.com/widgets.js' charset='utf-8')
+  .newletter-subscribe
+    .container
+      .news-bg
+        img(src='./assets/image.png' alt='')
+      .news-txt
+        p want to stay in touch?
+        h1 NEWSLETTER
+        h1 SUBSCRIBE
+        span
+          | In order to start receiving our news, all you have to do is enter
+          | your email address. Everything else will be taken care of by us. We
+          | will send you emails containing information about game. We don&rsquo;t
+          | spam.
+        form
+          .form-group
+            label(for='exampleFormControlInput1') Your email address
+            input#exampleFormControlInput1.form-control(type='email' placeholder='youremail@binar.co.id')
+          button.btn.btn-warning.mb-2.subscribe(type='submit')
+            | Subscribe now
