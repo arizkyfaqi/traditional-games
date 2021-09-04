@@ -21,13 +21,12 @@ endpoint<br />
    "email": "String", <br />
    "role": "admin || user", <br />
    "phone": Number, <br />
-   "password": Number <br />
    }<br />
-   note: data example ada di folder db
+   note: data example ada di folder db_csv
 2. POST http://127.0.0.1:3001/api/v1/users/login <br />
    Setelah register dilakukan user di harap login, untuk memasuki halaman tertentu.
 3. GET http://127.0.0.1:3001/api/v1/users/logout <br />
-   Logout digunakan untuk menhapus cookie dan mengeluarkan akun dari halaman. <br />
+   Logout digunakan untuk menhapus cookie dan mengeluarkan akun dari halaman.
    <br />
    note : harus login dengan admin untuk mengakses endpoint dibawah
    <br />
