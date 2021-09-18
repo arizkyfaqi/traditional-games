@@ -1,0 +1,18 @@
+extends base
+
+block append head  
+  title Login Page
+block content
+  .login-page
+    .form
+      h5 Register Form
+      form.register-form
+        input#username(type='text' placeholder='username')
+        input#password(type='password' placeholder='password')
+        input#fullname(type='text' placeholder='fullname')
+        input#email(type='text' placeholder='email address')
+        input#phone(type='number' placeholder='phone')
+        button create
+        p.message
+          | Already registered? 
+          a(href='/login') Sign In

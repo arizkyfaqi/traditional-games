@@ -41,7 +41,7 @@ exports.getUsers = catchAsync(async (req, res, next) => {
 });
 
 exports.signup = catchAsync(async (req, res, next) => {
-  const newUser = await db.UserGame.create({
+  let newUser = await db.UserGame.create({
     username: req.body.username,
     password: req.body.password,
   });
@@ -50,15 +50,16 @@ exports.signup = catchAsync(async (req, res, next) => {
     return res.status(400).json('Something went wrong, Please try again!');
   }
 
+  const userGameId = newUser.id;
   const userBio = await db.UserGameBiodata.create({
     fullname: req.body.fullname,
     email: req.body.email,
     phone: req.body.phone,
     role: 'user',
-    UserGameId: newUser.id,
+    UserGameId: userGameId,
   });
 
-  // const userData = Object.assign(newUser, userBio);
+  // newUser.password = undefined;
   const userData = {
     authuser: { ...newUser },
     userbio: { ...userBio },
@@ -79,15 +80,16 @@ exports.signin = catchAsync(async (req, res, next) => {
   }
 
   //2) validasi email & pswd
-  const user = await db.UserGame.findAll({
+  const user = await db.UserGame.findOne({
     where: {
       username: req.body.username,
     },
   });
 
-  userData = user[0].dataValues;
+  // userData = user[0].dataValues;
+  const passwordMatch = await user.validPassword(password, user.password);
 
-  if (!user || !(password === userData.password)) {
+  if (!user || !passwordMatch) {
     res.status(400).json({
       status: 'fail',
       message: 'Incorrect email or password!',
@@ -95,7 +97,7 @@ exports.signin = catchAsync(async (req, res, next) => {
   }
 
   //send token to client
-  createSendToken(userData, 200, res);
+  createSendToken(user, 200, res);
 });
 
 exports.logout = (req, res) => {
@@ -126,7 +128,9 @@ exports.protect = catchAsync(async (req, res, next) => {
 
   const decode = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
   const currentUser = await db.UserGameBiodata.findAll({
-    where: { UserGameId: decode.id },
+    where: {
+      UserGameId: decode.id,
+    },
   });
 
   if (!currentUser) {
@@ -135,6 +139,7 @@ exports.protect = catchAsync(async (req, res, next) => {
       message: 'The user belonging to this token does no longer exist.',
     });
   }
+  // console.log(decode);
   // console.log(currentUser);
   req.user = currentUser[0].dataValues;
   next();

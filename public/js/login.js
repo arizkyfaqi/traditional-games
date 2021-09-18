@@ -1,4 +1,5 @@
 const loginForm = document.querySelector('.login-form');
+const registerForm = document.querySelector('.register-form');
 const logOutBtn = document.querySelector('.logout-btn');
 
 const login = async (username, password) => {
@@ -17,6 +18,32 @@ const login = async (username, password) => {
       alert('Logged in successfully!');
       window.setTimeout(() => {
         location.assign('/');
+      }, 500);
+    }
+  } catch (err) {
+    alert(err.response.data.message);
+  }
+};
+
+const register = async (username, password, fullname, email, phone) => {
+  console.log(username, password, fullname, email, phone);
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: 'http://127.0.0.1:3001/api/v1/users/signup',
+      data: {
+        username,
+        password,
+        fullname,
+        email,
+        phone,
+      },
+    });
+
+    if (res.data.status === 'success') {
+      alert('Reguster success, please logged in!');
+      window.setTimeout(() => {
+        location.assign('/login');
       }, 500);
     }
   } catch (err) {
@@ -43,6 +70,16 @@ if (loginForm) {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     login(username, password);
+  });
+} else if (registerForm) {
+  document.querySelector('.form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const fullname = document.getElementById('fullname').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    register(username, password, fullname, email, phone);
   });
 } else if (logOutBtn) {
   logOutBtn.addEventListener('click', logout);

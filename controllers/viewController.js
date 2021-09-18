@@ -10,6 +10,10 @@ exports.getLoginForm = (req, res) => {
   res.status(200).render('loginpage');
 };
 
+exports.getRegisterForm = (req, res) => {
+  res.status(200).render('registerform');
+};
+
 exports.rockPaperScr = (req, res) => {
   res.status(200).render('rockpaperscissors');
 };

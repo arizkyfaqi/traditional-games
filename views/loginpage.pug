@@ -5,11 +5,11 @@ block append head
 block content
   .login-page
     .form
+      h5 Login Form
       form.login-form
         input#username(type='text' placeholder='username')
         input#password(type='password' placeholder='password')
         button login
         p.message
           | Not registered? 
-          a(href='#') Create an account
-  
+          a(href='/register') Create an account

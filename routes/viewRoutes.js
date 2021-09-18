@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get('/', authController.isLoggedIn, viewController.getOverview);
 router.get('/login', viewController.getLoginForm);
+router.get('/register', viewController.getRegisterForm);
 
 router.use(authController.protect);
 

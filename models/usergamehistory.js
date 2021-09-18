@@ -3,22 +3,25 @@ module.exports = (sequelize, DataType) => {
     id: {
       type: DataType.UUID,
       primaryKey: true,
-      defaultValu: DataType.UUIDV4,
-      allowNull: false,
-      autoIncrement: false,
+      defaultValue: DataType.UUIDV4,
     },
-    game: {
-      type: DataType.STRING,
+    player_id: {
+      type: DataType.UUID,
       allowNull: false,
     },
-    secore: {
+    room_id: {
+      type: DataType.UUID,
+      allowNull: false,
+    },
+    result: {
       type: DataType.INTEGER,
       allowNull: false,
     },
-    time: {
-      type: DataType.STRING,
-      allowNull: false,
-    },
   });
+
+  UserGameHistory.associate = (models) => {
+    UserGameHistory.belongsTo(models.Room, { foriegenKey: 'room_id' });
+  };
+
   return UserGameHistory;
 };

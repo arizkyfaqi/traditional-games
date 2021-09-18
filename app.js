@@ -3,6 +3,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const userRoutes = require('./routes/userRoutes');
 const viewRoutes = require('./routes/viewRoutes');
+const gameRoutes = require('./routes/gameRoutes');
 const app = express();
 
 //specify pug template
@@ -24,6 +25,7 @@ app.use(cookieParser());
 
 //Routes Handler
 app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/games', gameRoutes);
 app.use('/', viewRoutes);
 
 module.exports = app;
