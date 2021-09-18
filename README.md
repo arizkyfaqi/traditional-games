@@ -20,9 +20,9 @@ endpoint on postman :
 <br />
 
 1. https://documenter.getpostman.com/view/9961117/UUxtDpqA
-   <br />
-   view endpoint :
-   <br />
+
+view endpoint :
+
 2. GET http://127.0.0.1:3001/ <br />
    Menampikan halaman utama.
 3. GET http://127.0.0.1:3001/login <br />
