@@ -3,6 +3,7 @@
 Challenge FWD Binar Chapter 7 <br />
 Assalamualaikum wr, wb. Pada challenge chapter 7 ini membuat APi endpoint create room untuk membuat room permainan, endpoint fight untuk dua player dan menjalankan permainan kemudian menyimpan hasil permainan pada database, menggunakan Json Web Token untuk authentication, memfilter (restrict) jenis user, menggunakan model design pattern MVC, dan sebagainya.
 <br />
+
 install modules : npm install <br />
 running server : npm start <br />
 
